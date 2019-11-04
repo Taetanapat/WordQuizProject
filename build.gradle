@@ -23,6 +23,12 @@ buildscript {
         supportlibVersion = '1.0.0-rc03'
         dataBindingCompilerVersion = gradleVersion // Always need to be the same.
         navigationVersion = '1.0.0-rc02'
+        roomVersion = '2.2.0'
+        archLifecycleVersion = '2.2.0-beta01'
+        androidxArchVersion = '2.1.0'
+        coreTestingVersion = "2.1.0"
+        coroutines = '1.2.0'
+        materialVersion = "1.0.0"
     }
     repositories {
         google()

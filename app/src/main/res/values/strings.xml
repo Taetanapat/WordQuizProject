@@ -17,26 +17,26 @@
 <resources>
     <string name="app_name">Android Trivia</string>
     <string name="game_over">Game Over</string>
-    <string name="try_again">Try Again?</string>
+    <string name="play_again">Play Again?</string>
     <string name="position">Position</string>
     <string name="select_an_avatar">Select an Avatar</string>
-    <string name="android_trivia">Android Trivia</string>
+<!--    <string name="android_trivia">Android Trivia</string>-->
     <string name="about_text">This is About Fragment</string>
-    <string name="rules_text">This is High Score Fragment</string>
+
     <string name="HighScore">HighScore</string>
     <string name="about">About</string>
-    <string name="trivia_hint">Trivia Hint</string>
+<!--    <string name="trivia_hint">Trivia Hint</string>-->
     <string name="title_android_trivia_question">Word Quiz (%1$d/%2$d)</string>
-    <string name="title_about_trivia">About Trivia</string>
-    <string name="title_trivia_rules">Trivia Rules</string>
-    <string name="share_success_text">I got Word Quiz score %1$d/%2$d correct questions!</string>
+<!--    <string name="title_about_trivia">About Trivia</string>-->
+<!--    <string name="title_trivia_rules">Trivia Rules</string>-->
+    <string name="share_success_text">ฉันได้คะแนนในเกม Word Quiz %1$d/%2$d </string>
     <string name="submit_button">Submit</string>
-    <string name="congratulations">Congratulations!</string>
+<!--    <string name="congratulations">Congratulations!</string>-->
     <string name="share">Share</string>
     <string name="sharing_not_available">Sharing Not Available</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="high_score_text">High Score</string>
-    <string name="score_text">Your Score : %1$d</string>
+    <string name="score_text">Your Score : 0</string>
 </resources>

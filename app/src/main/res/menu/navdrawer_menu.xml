@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/rulesFragment"
+        android:id="@+id/highScoreFragment"
         android:icon="@drawable/high_score_icon"
         android:title="@string/HighScore" />
     <item

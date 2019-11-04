@@ -57,6 +57,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_gameOverFragment_to_highScoreFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -73,7 +78,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_gameWonFragment_to_gameFragment">
+                            <entry key="action_gameWonFragment_to_gameOverFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
