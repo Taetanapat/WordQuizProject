@@ -62,13 +62,13 @@ class GameFragment : Fragment() {
     private var questionIndex = 0
     private var score = 0
     private var countwrong = 0
-   // private val numQuestions = Math.min((questions.size + 1) / 2, 5)
+
     private val numQuestions = questions.size
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        // Inflate the layout for this fragment
+
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(
                 inflater, R.layout.fragment_game, container, false)
 

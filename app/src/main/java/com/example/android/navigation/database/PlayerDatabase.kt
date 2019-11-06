@@ -6,28 +6,31 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(entities = [Player::class], version = 1, exportSchema = false)
+@Database(entities = [PlayerDataModel::class], version = 1, exportSchema = false)
 abstract class PlayerDatabase : RoomDatabase() {
-    abstract val sleepDatabaseDao: PlayerDAO
+
+    abstract fun Player(): PlayerDAO
+
     companion object {
+
         @Volatile
         private var INSTANCE: PlayerDatabase? = null
 
         fun getInstance(context: Context): PlayerDatabase {
-            synchronized(this) {
-                var instance = INSTANCE
-                if (instance == null) {
-                    instance = Room.databaseBuilder(
-                            context.applicationContext,
-                            PlayerDatabase::class.java,
-                            "player_database"
-                    )
-                            .fallbackToDestructiveMigration()
-                            .build()
-                    INSTANCE = instance
-                }
-                return instance
+
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                        context.applicationContext,
+                        PlayerDatabase::class.java,
+                        "database"
+                ).allowMainThreadQueries()
+                        .build()
+                INSTANCE = instance
+                instance
+
             }
         }
+
     }
+
 }

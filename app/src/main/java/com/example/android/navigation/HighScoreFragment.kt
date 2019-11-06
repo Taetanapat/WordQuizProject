@@ -17,15 +17,60 @@
 package com.example.android.navigation
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
+import com.example.android.navigation.database.PlayerDataModel
+import com.example.android.navigation.databinding.FragmentGameWonBinding
+import com.example.android.navigation.databinding.FragmentHighScoreBinding
 
+@Suppress("DEPRECATION")
 class HighScoreFragment : Fragment() {
+    private  lateinit var binding : FragmentHighScoreBinding
+    private lateinit var model: HighScoreViewModel
+    //lateinit var array : ArrayList<ListView>
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_high_score, container, false)
+        binding =   DataBindingUtil.inflate(
+                inflater, R.layout.fragment_high_score, container, false)
+        model = ViewModelProviders.of(this).get(HighScoreViewModel::class.java)
+
+        binding.playAgainButton.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_highScoreFragment_to_titleFragment)
+        }
+
+
+        val adapter = ListAdapter()
+        binding.sleepList.adapter = adapter
+
+        model.all.observe(viewLifecycleOwner, Observer {
+            it?.let() {
+                //Log.i("asd","${it} and ${it.PlayerName}")
+
+                //array.add(ListView(it.PlayerName,it.PlayerScore))
+
+                adapter.data = it
+                //adapter.data = listOf(it)
+                //Log.i("data","No.${count} : ${adapter.data}")
+
+            }
+//            if(count== t.size) {
+//                val adapter = ListAdapter()
+//                binding.sleepList.adapter = adapter
+//                adapter.data = array
+//                // Inflate the layout for this fragment
+//            }
+        })
+        binding.button2.setOnClickListener {
+            model.clear()
+        }
+
+        return binding.root
     }
 }
